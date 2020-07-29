@@ -12,8 +12,12 @@
     <tr>
       <th><%=article.title%></th>
       <th><%=article.description%></th>
-      <th>Placeholder</th>
+      <th><%= link_to "Show", article_path(article) %>
+      <th><%= link_to "Edit", edit_article_path(article)%>
+      <th><%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Are You Sure?"} %></th>
     </tr>
-    <%end%>
+    <%end%> 
   </tbody>
 </table>
+</br> 
+<%= link_to "Create New Article", new_article_path %>
