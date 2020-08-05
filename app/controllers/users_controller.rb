@@ -4,6 +4,11 @@ class UsersController < ApplicationController
   end
   def create
     @user=User.new(params.require(:user).permit(:username, :email, :password))
-    
+    if(@user.save)
+      flash[:notice]= "Welcome to alpha blog family"
+      redirect_to articles_path
+    else
+      render 'new'
+    end
   end 
 end

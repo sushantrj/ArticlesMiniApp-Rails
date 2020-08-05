@@ -12,6 +12,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
+    #bybug
     @article=Article.new(article_params)
     # OR Article.new(params.require(:article).permit(:title,:description))
     if(@article.save)
